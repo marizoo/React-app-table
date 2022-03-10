@@ -79,6 +79,34 @@ const App = () => {
         });
     };
 
+    // 05. a To handle Form submission for the Editable Row
+    const handleEditFormSubmit = (ev) => {
+        ev.preventDefault();
+
+        const editedContact = {
+            id: editContactId,
+            fullName: editFormData.fullName,
+            address: editFormData.address,
+            phoneNumber: editFormData.phoneNumber,
+            email: editFormData.email,
+        };
+
+        // copy the contact's array with spread operators, so we dont mutate the original state
+        const newContacts = [...contacts];
+
+        // get the index of each editable row
+        const index = contacts.findIndex(
+            (contact) => contact.id === editContactId
+        );
+
+        // Now we have the index, we can update the row in the given position
+        newContacts[index] = editedContact;
+
+        // hide the editable row
+        setContacts(newContacts);
+        setEditContactId(null);
+    };
+
     // 03.b. for the edit button in ReadOnly.jsx
     const handleEditClick = (ev, contact) => {
         ev.preventDefault();
@@ -98,7 +126,7 @@ const App = () => {
 
     return (
         <div className="app-container">
-            <form>
+            <form onSubmit={handleEditFormSubmit}>
                 <table>
                     <thead>
                         <tr>
