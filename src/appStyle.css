@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: #1d1d1d;
+    min-height: 100vh;
+    width: 100%;
+    
+}
+
+/* APP ----------------- */
+.app{
+    width: 100%;
+    background: #1d1d1d;
+    color: white;
+    padding: 1rem;
+    gap: 10px;
+    
+}
+
+/* GlassMorph */
+.glassMorph{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+
+
+/* Table----------------- */
+table{
+    width:1200px;
+    max-width: 1200px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+    font-size: 1.5rem;
+}
+
+thead{
+    text-align: left;
+}
+
+th{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    /* background: rgba(255, 255, 255, 0.1); */
+    background-color: rgba(128, 128, 128, 0.445);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+td{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    /* background: rgba(255, 255, 255, 0.1); */
+    background-color: rgba(255, 182, 193, 0.199);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+button{
+    padding: 1px 3px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* Add Form -------------- */
+.addForm-title{
+    margin: 1.5rem 0 0.8rem;
+}
+.addForm-form{
+    display: flex;
+    align-items: center;
+    width:1200px;
+    max-width: 1200px;
+}
+
+.addForm-input{
+    padding:  2px 8px;
+    font-size: 1.1rem; 
+    margin-right: 1rem;
+}
+
+.addForm-input:focus{
+    outline: none;
+}
+
+.addForm-btn{
+    width: 80px;
+    height: 1.8rem;
+}
