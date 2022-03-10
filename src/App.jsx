@@ -124,6 +124,26 @@ const App = () => {
         // now add this to EditableRow so the value will show on the edit form
     };
 
+    // 06 a. Cancel button
+    const handleCancelClick = () => {
+        setEditContactId(null);
+    };
+    // now add this to the editableRow
+
+    // 07. Delete row
+    const handleDeleteRow = (id) => {
+        // one way to do it
+        // const newContacts = contacts.filter((contact) => contact.id !== id);
+        // setContacts(newContacts);
+
+        // Another way to do it
+        const newContacts = [...contacts];
+        const index = contacts.findIndex((contact) => contact.id === id);
+        newContacts.splice(index, 1);
+
+        setContacts(newContacts);
+    };
+
     return (
         <div className="app-container">
             <form onSubmit={handleEditFormSubmit}>
@@ -146,12 +166,14 @@ const App = () => {
                                         onHandleEditFormChange={
                                             handleEditFormChange
                                         }
+                                        onHandleCancelClick={handleCancelClick}
                                     />
                                 ) : (
                                     <ReadOnlyRow
                                         key={contact.id}
                                         contact={contact}
                                         onhandleEditClick={handleEditClick}
+                                        onHandleDeleteRow={handleDeleteRow}
                                     />
                                 )}
                             </>
