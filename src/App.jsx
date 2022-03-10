@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import data from "./mock-data.json";
-// import { nanoid } from "nanoid";
+import { nanoid } from "nanoid";
 
 const App = () => {
     const [contacts, setContacts] = useState(data);
@@ -23,6 +23,29 @@ const App = () => {
         newFormData[fieldName] = fieldValue;
 
         setAddFormData(newFormData);
+    };
+
+    // Add new input to the data list
+    const handleAddFormSubmit = (ev) => {
+        ev.preventDefault();
+
+        const newContact = {
+            id: nanoid(),
+            fullName: addFormData.fullName,
+            address: addFormData.address,
+            phoneNumber: addFormData.phoneNumber,
+            email: addFormData.email,
+        };
+
+        const newContacts = [...contacts, newContact];
+
+        setContacts(newContacts);
+        setAddFormData({
+            fullName: "",
+            address: "",
+            phoneNumber: "",
+            email: "",
+        });
     };
 
     return (
@@ -48,13 +71,14 @@ const App = () => {
                 </tbody>
             </table>
             <h2>Add a Contact</h2>
-            <form>
+            <form onSubmit={handleAddFormSubmit}>
                 <input
                     type="text"
                     name="fullName"
                     required
                     placeholder="Enter your name"
                     onChange={handleAddFormChange}
+                    value={addFormData.fullName}
                 />
                 <input
                     type="text"
@@ -62,6 +86,7 @@ const App = () => {
                     required
                     placeholder="Enter address"
                     onChange={handleAddFormChange}
+                    value={addFormData.address}
                 />
                 <input
                     type="text"
@@ -69,6 +94,7 @@ const App = () => {
                     required
                     placeholder="Enter phone number"
                     onChange={handleAddFormChange}
+                    value={addFormData.phoneNumber}
                 />
                 <input
                     type="email"
@@ -76,6 +102,7 @@ const App = () => {
                     required
                     placeholder="Enter email"
                     onChange={handleAddFormChange}
+                    value={addFormData.email}
                 />
                 <button type="submit">Add</button>
             </form>
