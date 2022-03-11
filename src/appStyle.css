@@ -19,7 +19,17 @@ body{
     color: white;
     padding: 1rem;
     gap: 10px;
-    
+}
+
+.app::before{
+    content: '';
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: circle(300px at 0% 0%);
+    background: #9bdc28;
+    transition: 0.4s;
 }
 
 /* GlassMorph */
