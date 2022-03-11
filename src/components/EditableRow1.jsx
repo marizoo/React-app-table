@@ -1,6 +1,6 @@
 import React from "react";
 
-const EditableRow = ({
+const EditableRow1 = ({
     onEditFormData,
     onHandleEditFormChange,
     onHandleCancelClick,
@@ -57,4 +57,4 @@ const EditableRow = ({
     );
 };
 
-export default EditableRow;
+export default EditableRow1;

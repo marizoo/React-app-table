@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import ReadOnlyRow from "./components/ReadOnlyRow";
 import EditableRow from "./components/EditableRow";
 
-const App = () => {
+const App1 = () => {
     // 01. listing data from json
     const [contacts, setContacts] = useState(data);
 
@@ -221,4 +221,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default App1;
